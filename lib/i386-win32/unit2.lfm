@@ -1,0 +1,43 @@
+object Form2: TForm2
+  Left = 345
+  Height = 333
+  Top = 159
+  Width = 590
+  Caption = 'Form2'
+  ClientHeight = 333
+  ClientWidth = 590
+  LCLVersion = '1.6.0.4'
+  object Memo1: TMemo
+    Left = 0
+    Height = 333
+    Top = 0
+    Width = 590
+    Align = alClient
+    Lines.Strings = (
+      'Abbreviation Maker allows the creation of Abbreviations and relationships to technologies. Both the '
+      'Abbreviations, Technologies and the relationship between them can be created and edited with the'
+      'application.'
+      ''
+      'The DBGrid Acronym contains a list of all abbreviations in the database.'
+      'The DBGrid Tech contains a list of all thechnologies listed in the database to which the avbbrevaiations '
+      'can be related. Both tables are editiable in the DBGrid windows.'
+      ''
+      'Selecting an acronym on the abbreviations DBGrid will show all existing relationships between the   '
+      'specific Acronym  and the technologies. '
+      ''
+      'To relate a technology to an Acronym select the Acronym by clicking on it in the Acronym DBGrid then '
+      'select the relevant technology in the  right hand Tech DBGrid. Pressing the ADD button will create the '
+      'relationship and add it to the database.'
+      ''
+      'The underlying database this tool modifies is intended to be used in the automation of Abbreviation tables'
+      ' in technical documents. Using simple scripts the user can query and create a table with all Acronyms relevant'
+      ' to the doument.'
+      ''
+      'Due to Table contraints and the need to keep this tool simple it is not possible to delete relationships with this'
+      ' tool, these need to be manually deleted in the database.'
+      '    '
+    )
+    OnChange = Memo1Change
+    TabOrder = 0
+  end
+end

@@ -1,0 +1,289 @@
+object Form1: TForm1
+  Left = 160
+  Height = 681
+  Top = 77
+  Width = 953
+  Caption = 'Form1'
+  ClientHeight = 681
+  ClientWidth = 953
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object dbgAbbrev: TDBGrid
+    Left = 8
+    Height = 312
+    Top = 56
+    Width = 472
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgDisableDelete]
+    TabOrder = 0
+    OnCellClick = dbgAbbrevCellClick
+    OnKeyUp = dbgAbbrevKeyUp
+  end
+  object btnInsert: TButton
+    Left = 619
+    Height = 25
+    Hint = 'Add the relationship to the database'
+    Top = 616
+    Width = 75
+    Caption = 'ADD'
+    OnClick = btnInsertClick
+    TabOrder = 1
+  end
+  object dbgTech: TDBGrid
+    Left = 496
+    Height = 312
+    Top = 56
+    Width = 448
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgDisableDelete]
+    TabOrder = 2
+    OnCellClick = dbgTechCellClick
+    OnKeyUp = dbgTechKeyUp
+  end
+  object dbgXref: TDBGrid
+    Left = 160
+    Height = 224
+    Top = 448
+    Width = 320
+    AutoEdit = False
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource3
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgDisableDelete]
+    ParentBiDiMode = False
+    TabOrder = 3
+    OnKeyUp = dbgXrefKeyUp
+  end
+  object Label1: TLabel
+    Left = 626
+    Height = 15
+    Top = 544
+    Width = 61
+    Caption = 'is related to'
+    ParentColor = False
+  end
+  object edbAbbr: TEdit
+    Left = 545
+    Height = 23
+    Hint = 'Select Acronym from the Acromyn DB grid'
+    Top = 504
+    Width = 223
+    TabOrder = 4
+    Text = 'edbAbbr'
+  end
+  object edbTech: TEdit
+    Left = 536
+    Height = 23
+    Hint = 'Select Technology Name from the Tech DB grid'
+    Top = 576
+    Width = 240
+    TabOrder = 5
+    Text = 'edbTech'
+  end
+  object DBNaviAbbr: TDBNavigator
+    Left = 72
+    Height = 25
+    Top = 376
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 6
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+  end
+  object DBNavTech: TDBNavigator
+    Left = 560
+    Height = 25
+    Top = 376
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource2
+    Options = []
+    TabOrder = 7
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+  end
+  object btnCommit: TButton
+    Left = 320
+    Height = 22
+    Hint = 'Commit changes to the Database'
+    Top = 377
+    Width = 72
+    Caption = 'Commit'
+    OnClick = btnCommitClick
+    TabOrder = 8
+  end
+  object btnCommit2: TButton
+    Left = 808
+    Height = 22
+    Hint = 'Commit changes to the Database'
+    Top = 377
+    Width = 72
+    Caption = 'Commit'
+    OnClick = btnCommitClick
+    TabOrder = 9
+  end
+  object Label3: TLabel
+    Left = 192
+    Height = 22
+    Top = 32
+    Width = 95
+    Caption = 'Acronyms'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 661
+    Height = 22
+    Top = 32
+    Width = 126
+    Caption = 'Technologies'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 248
+    Height = 22
+    Top = 424
+    Width = 126
+    Caption = 'Relationships'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 578
+    Height = 22
+    Top = 456
+    Width = 157
+    Caption = 'Add Relationship'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnQuit: TButton
+    Left = 869
+    Height = 25
+    Hint = 'Quit the application'
+    Top = 648
+    Width = 75
+    Caption = '&Quit'
+    OnClick = btnQuitClick
+    TabOrder = 10
+  end
+  object btnHelp: TButton
+    Left = 864
+    Height = 25
+    Hint = 'Get help on using the application'
+    Top = 16
+    Width = 75
+    Caption = 'Help'
+    OnClick = btnHelpClick
+    TabOrder = 11
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'Abbrevs.db'
+    KeepConnection = False
+    Params.Strings = (
+      'foreign_keys=1'
+    )
+    Transaction = SQLTransaction1
+    Options = []
+    left = 736
+    top = 656
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = SQLite3Connection1
+    Options = []
+    left = 720
+    top = 656
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 680
+    top = 656
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 672
+    top = 656
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 616
+    top = 656
+  end
+  object DataSource2: TDataSource
+    DataSet = SQLQuery2
+    left = 608
+    top = 656
+  end
+  object SQLQuery3: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 560
+    top = 656
+  end
+  object DataSource3: TDataSource
+    DataSet = SQLQuery3
+    left = 544
+    top = 656
+  end
+end
